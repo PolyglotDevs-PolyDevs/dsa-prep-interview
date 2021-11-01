@@ -1,0 +1,67 @@
+Two approaches, first we use hashmap and check in stones,
+and in second, we just run double loop which saves us space,
+and works completely 100% fast as well.
+ int numJewelsInStones(string jewels, string stones){
+        unordered_map<char,bool> map;
+    
+        for(char& ch  : jewels){
+            map[ch] = true;
+        }
+        int count = 0;
+        for(char& ch : stones){
+            if(map[ch] == true) count++;
+        }
+        return count;
+	}
+        int numJewelsInStones(string jewels, string stones){
+         int cnt=0;
+        for(int i=0;i<stones.length();i++){
+            for(int j=0;j<jewels.length();j++){
+                if(stones[i]==jewels[j])
+                    cnt++;
+            }
+        }
+        return cnt;
+	}
+
+
+
+    count = 0
+for i in stones:
+    if i in jewels:
+        count += 1
+
+return count
+
+
+class Solution {
+public:
+    int numJewelsInStones(string jewels, string stones) {
+        unordered_set<char> uj; // to store the unique jewls
+        int sol=0;
+        for(auto a: jewels){
+            uj.insert(a);
+        }
+        for(auto a: stones)
+        {
+            if(uj.count(a)) // to find the jewels from the stones
+                sol++; // if the stone is a jewel the increment sol with 1
+        }
+        return sol;
+    }
+};
+
+
+class Solution {
+    public int numJewelsInStones(String jewels, String stones) {
+        int occurence = 0;
+        for(int i = 0; i < jewels.length(); i++){
+            for(int j = 0; j<stones.length(); j++){
+                if(stones.charAt(j) == jewels.charAt(i)){
+                    occurence++;
+                }
+            }
+        }
+        return occurence;
+    }
+}
