@@ -1,0 +1,71 @@
+Example 
+
+7, “hi”
+20, “hello”
+33, “sunny”
+46, “weather”
+59, “wow”
+72, “forty”
+85, “happy”
+98, “sad”
+
+
+Using The linear probing Technique
+1- create hash table 
+function HashTable(size){
+    this.size = size;
+    this.keys = this.initArrays(size);
+    this.values = this.initArrays(size); 
+    this.limit = 0; 
+}
+
+As the definition states hash table  is fixed-size datastructure (containing  keys and values)
+now we're gonna add the first method os hash table (put)
+//linear probin algorithm working by checking the next avaiable position 
+// here's the tip , in order to find the next available position in arrays 
+first = []
+while(first[index] == null) -> this means when empty always 
+while(first[index] != null)-> this means when !empty always 
+how the hashing function work ? 
+
+
+
+
+HashTable.prototype.put = function(key,value){
+    if(this.limit >= this.size) throw 'hash table is full '
+    var hashedIndex = this.hash(key);
+    //linear probing , in order to avoid collision 
+    while(this.keys[hashedIndex] != null){
+        hashedIndex++;
+        hashedIndex = hashedIndex % this.size;
+    }
+    this.keys[hashedIndex] = key;
+    this.values[hashedIndex] = value;
+    this.limit++;
+}
+
+HashTable.prototype.get = function(key){
+    var hashedIndex = this.hash(key);
+    while(this.keys[hashedIndex] != key){
+        hashedIndex++; 
+        hashedIndex = hashedIndex % this.size;
+    }
+    return this.values[hashedIndex];
+}
+now is time to create the hashing function ,heads up the hashing technique used here is called linear-probing ,it can meet error-ratio that's why we'll show here more than one technique
+
+HashTable.prottotype.hash = function(key){
+    //check if int 
+    if(!Number.isInteger(key)) throw ' must be int' ;
+    return key % this.size;
+}
+
+HashTable.prototype.initArray = function(size){
+    var array = []; 
+    for(vara i = 0; i < size; i ++){
+        array.push(null);
+    }
+    return array;
+}
+
+//Quadratic probing algorith/technique
