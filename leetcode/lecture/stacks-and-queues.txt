@@ -1,0 +1,33 @@
+Stack  is a datastructurre in which only the
+last inserted element can be removed and accessed 
+One easy approach to understanding stack in to think of plates
+
+To get to the
+bottom one, you must remove all the other ones on the top. This is a principle known
+as last in, first out (LIFO).
+
+function len(arr){
+    return arr.length-1;
+}
+function str(s){
+    return String(s);
+}
+
+Stacks implmentation 
+
+function Stack(array){
+    this.array = array || []; 
+}
+
+Stack.prototype.getBuffer = function(){
+    return this.array.slice();//create a little copy of the actually array without causing an side-effect 
+
+}
+
+Stock.prototype.isEmpty = function(){
+    return this.array.length    == 0;
+}
+
+Stack.prototype.peek = function(){
+    return this.array[this.array.length-1];
+}
