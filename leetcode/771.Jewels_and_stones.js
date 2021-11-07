@@ -8,3 +8,30 @@ function solution(j){
 return counter;
 }
    
+
+// second solution 
+
+function HashSet(){
+    this.s = new Set(); 
+    this.counter = 0; 
+    this.limit = 0;
+}
+
+
+HashSet.prototype.add = function(val){
+    this.s.add(val);
+    this.limit ++; 
+}
+HashSet.prototype.containAndCounter = function(val){
+    this.s.forEach( (item,idx) =>{
+        if(item == val){this.counter+=1;}
+    })
+return this.counter;
+}
+
+HashSet.prototype.containAndCounter = function(val){
+    this.s.forEach( (item,idx) =>{
+        if(item == val){this.counter+=1;}
+    })
+return this.counter;
+}
