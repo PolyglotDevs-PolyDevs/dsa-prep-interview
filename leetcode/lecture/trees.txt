@@ -1,0 +1,51 @@
+A general tree data structure is coompose of nodes with children nodes 
+represantation in code 
+
+ function TreeNode( value){
+     this.value = value; 
+     this.children = [];
+ }'
+
+ // Binary tree 
+ function BinaryTreeNode(value){
+     this.value = value; 
+     this.left = null ; 
+     this.right = null; //here right and left are considered to  be children and suddenly become root to other children
+ }
+ //after set up the node it's time to set up the whole tree 
+
+ function BinaryTree(){
+     this._root = null;
+ }
+
+ Tree nodes need to be traversed ,inserted ,deleted, searched and those are the operations we're gonna focus 
+ for tree traversing there are some intresting alogrithms 
+
+ Pre-order Traversal (current node(root) ,left,right)
+
+recursivelly 
+ BinaryTree.prototype.traversePreOder =function({
+     traversePreOderHelper(this._root);
+     function traversePreOrderHelper(node){
+         if(!node)return;
+         console.log(node.value);
+         traversePreOderHelper(node.left);
+         traversePreOderHelper(node.right);
+     }
+ })
+
+iteratively. 
+BinaryTree.prototype.traversePreOrderInterative = function(){
+    //create an empty stack and push root to it 
+    var nodeStack = [];
+    
+}
+
+
+
+
+ In-order Traversal 
+
+ Post-order Traversal 
+
+ Level-Order Traversal  
