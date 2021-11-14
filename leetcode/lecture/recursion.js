@@ -1,5 +1,4 @@
-fibonanci recursively 
-
+fibonanci iteratively 
 function getNthFibo(n){
     if(n <= 1)return n; 
 
@@ -12,3 +11,16 @@ function getNthFibo(n){
     }
     return sum;
 }
+fibonaci recursively 
+
+
+function getNthFibo(n){
+    if(n<=1)return n; 
+    else{
+       console.log('is n getting called ') ; 
+       return getNthFibo(n-1)  + getNthFibo(n-2);
+    }
+}
+
+
+    
