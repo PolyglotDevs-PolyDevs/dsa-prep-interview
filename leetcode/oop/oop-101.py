@@ -36,4 +36,10 @@ def main():
 
     if __name__ == "__main__":
         main()
-        
+
+#importing modules 
+"""
+There' are two ways to import modules in python 
+convenient way and safe way  
+
+"""
