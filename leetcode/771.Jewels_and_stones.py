@@ -10,9 +10,6 @@ expected output -> 3
 
 Input -> j = "z", s = "ZZ"
 Output-> 0 
-
-
-
 O(n)
 
 class JewelsAndStone: 

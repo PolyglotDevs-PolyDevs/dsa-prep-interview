@@ -46,3 +46,6 @@ def main():
         screen.exitonclick()
         print(" program execution completed .")
 
+        if __name__ == "__main__":
+            main()
+
